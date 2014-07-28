@@ -1,0 +1,17 @@
+{
+  "name": "cssc",
+  "version": "0.0.1",
+  "description": "Command line tool to find duplicate CSS selectors.",
+  "author": "Nick Thomas",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "dependencies": {
+    "commander": "^2.3.0",
+    "css": "^2.0.0",
+    "hashset-native": "0.0.2"
+  },
+  "bin": {
+    "cssc": "cssc.js"
+  }
+}
