@@ -43,7 +43,6 @@ function searchFile() {
   // keep track of duplicate selectors
   var dups = new Hashset.string();
 
-  // parse css
   var rules = getRules(program.args[0]);
 
   // add the css selectors to a set
@@ -79,8 +78,6 @@ function compareFiles() {
     var selector = rules[i].selectors[0];
     if (css.contains(selector)) {
       dups.add(selector);
-    } else {
-      css.add(selector);
     }
   }
 
