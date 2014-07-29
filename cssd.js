@@ -6,7 +6,6 @@ var program = require('commander'),
     Hashset = require('hashset-native');
 
 program
-  .version('0.0.1')
   .usage('<css1> [css2]')
   .parse(process.argv);
 
