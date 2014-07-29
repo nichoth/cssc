@@ -1,5 +1,5 @@
 # CSSD
-Command line tool to find duplicate css selectors.
+Command line tool for finding duplicate css selectors.
 
 ## Installation
     

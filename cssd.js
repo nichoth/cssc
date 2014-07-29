@@ -5,10 +5,6 @@ var program = require('commander'),
     fs      = require('fs'),
     Hashset = require('hashset-native');
 
-var css1 = new Hashset.string(),
-    css2 = '',
-    dups = '';
-
 program
   .version('0.0.1')
   .usage('<css1> [css2]')
