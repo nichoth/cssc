@@ -21,7 +21,7 @@ if (program.args.length == 1) {
 
 
 /**
- * Get rules from a css file.
+ * Helper function. Get rules from a css file.
  * @param  {string} fileName Name of the file to read.
  * @return {Array}          Array of rules objects.
  */
@@ -33,30 +33,37 @@ function getRules(fileName) {
 }
 
 
+/**
+ * Print dulplicate css selectors within a file.
+ */
 function searchFile() {
   var css = new Hashset.string();
-  // keep track of duplicate selectors
   var dups = new Hashset.string();
 
   var rules = getRules(program.args[0]);
 
   // add the css selectors to a set
   for (var i = 0; i < rules.length; i++) {
-    var rule = rules[i].selectors[0];
-    if (css.contains(rule)) {
-      dups.add(rule);
-    } else {
-      css.add(rule);
+
+    for (var j=0; j < rules[i].selectors.length; j++) {
+      var sel = rules[i].selectors[j];
+      if (css.contains(sel)) {
+        dups.add(sel);
+      } else {
+        css.add(sel);
+      }
     }
   }
-
   var iter = dups.iterator();
   while (iter.hasNext()) {
     console.log(iter.next());
   }
-
 }
 
+
+/**
+ * Print css selectors appearing in both of two files.
+ */
 function compareFiles() {
   var css = new Hashset.string();
   var dups = new Hashset.string();
@@ -64,15 +71,19 @@ function compareFiles() {
   var rules = getRules(program.args[0]);
 
   for (var i = 0; i < rules.length; i++) {
-    css.add(rules[i].selectors[0]);
+    for (var j=0; j < rules[i].selectors.length; j++) {
+      css.add(rules[i].selectors[j]);
+    }
   }
 
   rules = getRules(program.args[1]);
 
   for (var i = 0; i < rules.length; i++) {
-    var selector = rules[i].selectors[0];
-    if (css.contains(selector)) {
-      dups.add(selector);
+    for (var j=0; j < rules.length; j++) {
+      var sel = rules[i].selectors[j];
+      if (css.contains(sel)) {
+        dups.add(sel);
+      }
     }
   }
 
