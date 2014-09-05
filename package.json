@@ -1,6 +1,6 @@
 {
   "name": "cssd",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Command line tool to find duplicate CSS selectors.",
   "homepage": "https://github.com/nichoth/cssd",
   "author": "Nick Thomas",
