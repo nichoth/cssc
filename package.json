@@ -2,13 +2,17 @@
   "name": "cssd",
   "version": "0.0.4",
   "description": "Command line tool to find duplicate CSS selectors.",
+  "homepage": "https://github.com/nichoth/cssd",
   "author": "Nick Thomas",
   "engines": {
     "node": ">=0.10"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nichoth/cssc.git"
+    "url": "https://github.com/nichoth/cssd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nichoth/cssd/issues"
   },
   "dependencies": {
     "commander": "^2.3.0",

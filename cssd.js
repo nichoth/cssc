@@ -6,7 +6,7 @@ var program = require('commander'),
     Hashset = require('hashset-native');
 
 program
-  .usage('<css1> [css2]')
+  .usage('<file1.css> [file2.css]')
   .parse(process.argv);
 
 
